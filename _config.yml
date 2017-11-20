@@ -1,6 +1,7 @@
 # main text of home
-name: John Doe
-bio: A Man who travels the world eating noodles
+name: Derrick Lim
+bio: An inquisitive and objective-oriented individual with travel and hospitality background who enjoys exploring and
+unravelling intricacies in data to generate business insights and values.
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -8,13 +9,13 @@ description: A blog about technology and stuff related
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/images/profile.jpg
+picture: assets/images/dlim-profile.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/drive/folders/0BxMTQMkpdvhsZ1RMcFhMd3FaS0k
 
 url: https://koppl.in/indigo
 # your url: http://USERNAME.github.io
