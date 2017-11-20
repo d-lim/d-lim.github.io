@@ -30,7 +30,7 @@ permalink: /:title/
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
-  shortname: mydisqus # enter this from your disqus account
+  shortname: derricklim # enter this from your disqus account
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
@@ -53,7 +53,7 @@ github: d-lim/Projects
 email: d_lim@outlook.sg
 
 authors:
-    johndoe:
+    derrick:
         name: Derrick Lim
         bio: Data Science Practitioner | Travel & Hospitality Professional
         external-image: false
