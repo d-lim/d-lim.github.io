@@ -1,33 +1,38 @@
 ---
-title: ":ramen: Indigo, minimalist jekyll theme"
+title: ":Project: Human Mobility Prediction"
 layout: post
 date: 2017-11-17 09:00
 tag: jekyll
-image: https://koppl.in/indigo/assets/images/jekyll-logo-light-solid.png
-headerImage: true
+image: 
+headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "This is a simple and minimalist template for Jekyll for those who likes to eat noodles."
+description: "Explored predicting human mobility by analysing a year’s worth of taxi trips and generating models to predict passenger destinations"
 category: project
 author: derrick
 externalLink: false
 ---
 
-![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png) #pic of  prject
+Test
 
-Example of project - Indigo Minimalist Jekyll Template - [Demo](http://sergiokopplin.github.io/indigo/). This is a simple and minimalist template for Jekyll for those who likes to eat noodles.
+test
+
+test
+
+Full implementation details at my [Github](http://sergiokopplin.github.io/indigo/)
 
 ---
 
-What has inside?
+Approach Taken:
 
-- Gulp
-- BrowserSync
-- Stylus
-- SVG
-- Travis
-- No JS
-- [98/100](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fsergiokopplin.github.io%2Findigo%2F)
+- Extract, transform & load (ETL) data onto a VM Instance on Google Cloud
+- Perform wrangling and exploratory data analysis (EDA)
+- Create Train/Validation datasets
+- Create machine learning models using train data
+	- Regression  - Tree Based Models
+	- Classification – Neural Network 
+- Validate models using the mean haversine distance and thereafter predict on test data set
+
 
 ---
 
