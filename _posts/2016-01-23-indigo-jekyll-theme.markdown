@@ -135,11 +135,11 @@ Regression tree based models chosen to predict the destination of our taxi trips
 Therefore, both Decision Tree Regressor and Random Forest Regressor from sklearn packages will be used.
 
 To adopt regression models the following steps are carried out:
-	1. Conduct GridSearchCV for best minimum samples to split 
-	2. Use Decision Tree Regressor with best parameter found to train validate
-	3. Use Random Forest Regressor with best parameter found above  to train validate
+1. Conduct GridSearchCV for best minimum samples to split 
+2. Use Decision Tree Regressor with best parameter found to train validate
+3. Use Random Forest Regressor with best parameter found above  to train validate
 
-DecisionTreeRegressor hyperparameter, minimum samples requried a split is chosen to grid search upon to determine how many coordinates should fall in a rectilinear boundary. Values 80, 100, 150, 250, 500 are chosen as split criteria. 
+The hyperparameter of the Decision Tree Regressor, minimum samples requried for a split, is chosen to grid search upon to determine how many coordinates should fall in a rectilinear boundary. Values 80, 100, 150, 250, 500 are chosen as split criteria. 
 
 After gridsearch, best min samples split value is 100. Performance of the decision tree model is evaluated using the validation which resulted in an evaluation score of 2.26km.
 
@@ -154,7 +154,7 @@ A comparasion of both models:
 <img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/>
 <img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
 
-Feature importance: 
+<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 1500px;"/>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
 
@@ -170,22 +170,22 @@ As a regression approach is used in for our Tree Based Model, a classification a
 
 To adopt an ANN the following steps are carried out:
  
-	1. Form clusters of our destinations in our train set by rounding them to the fourth decimal place and geohashing them
-	2. Split our train and val in to X (Predictor variables) and y (outcome variables) respectively
-	3. Design and built our ANN model with Harversine distance as our custom loss function
-	4. Fit X_train, y_train, X_val, y_val into our ANN to train it
-	5. Plot Training and Validation Loss per epoch to determine how good our ANN is performing
-	6. Chose the best model and use it to predict on our test set
+1. Form clusters of our destinations in our train set by rounding them to the fourth decimal place and geohashing them
+2. Split our train and val in to X (Predictor variables) and y (outcome variables) respectively
+3. Design and built our ANN model with Harversine distance as our custom loss function
+4. Fit X_train, y_train, X_val, y_val into our ANN to train it
+5. Plot Training and Validation Loss per epoch to determine how good our ANN is performing
+6. Chose the best model and use it to predict on our test set
 
 
 To cluster our end destinations, a two step approach is taken:
 
-	1. Extracting destinations coordinates in a pair. As latitudes and longitudes up to [4 decimals place have a precision of 11.132m](https://en.wikipedia.org/wiki/Decimal_degrees), points along the same street with be effectively grouped together.
-	2. After rounding, in order to further cluster coordinates into larger groups, coordinates are geohashed. 
-	    - Geohash encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, using hilbert space filling curves. [More information on Geohash](http://www.bigfastblog.com/geohash-intro)  
-	    - [Geohash package used](https://pypi.python.org/pypi/geohash-hilbert)  
-	    - Geohash precision of 17, using with base 4 (2bit) is chosen as it groups coordinates within (0.152703km x 0.152703km = 0.02km sq) together  
-	    - After encoding, geohashes are decoded to get the centroid coordinates representing each cluster  
+1. Extracting destinations coordinates in a pair. As latitudes and longitudes up to [4 decimals place have a precision of 11.132m](https://en.wikipedia.org/wiki/Decimal_degrees), points along the same street with be effectively grouped together.
+2. After rounding, in order to further cluster coordinates into larger groups, coordinates are geohashed. 
+    - Geohash encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, using hilbert space filling curves. [More information on Geohash](http://www.bigfastblog.com/geohash-intro)  
+    - [Geohash package used](https://pypi.python.org/pypi/geohash-hilbert)  
+    - Geohash precision of 17, using with base 4 (2bit) is chosen as it groups coordinates within (0.152703km x 0.152703km = 0.02km sq) together  
+    - After encoding, geohashes are decoded to get the centroid coordinates representing each cluster  
 
 
 <img src="../assets/images/ANN.png" alt="ANN" style="width: 1500px;"/>
