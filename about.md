@@ -11,7 +11,7 @@ When i’m not dabbling with data, I like to:
 - Read to keep up with current events  
 - Run to unwind tangled thoughts  
 - Explore the world to learn about different cultures  
-<li>Connect with people over a good cup of coffee 
+- Connect with people over a good cup of coffee  
 
 <h2>Skills</h2>
 
