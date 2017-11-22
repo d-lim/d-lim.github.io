@@ -115,13 +115,131 @@ There appears to be a dip in taxi service in August 2013, lowest being in week 3
 
 ___
 
+<h2> Train/Validation datasets </h2>
+
+A validation set is created to determine the performance of model before using it to predict on our test set. As the given test set contains 320 truncated trips, we will split our training data into train and validation sets. The ratio chosen is train(99.9% - 1,580,976 trips) and validation(0.1% - 1,581 trips). In addition, the polyline coordinates of the validation set have to be truncated.
+
+From [research](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.391.8313&rep=rep1&type=pdf) done by University of South Florida, five coordinates is required to conduct trajectory prediction analysis. Therefore, we shall use only the five and last five coordinates for our destination prediction. 
+
+---
+
+<h2> Predictive Models </h2>
+
+- <h3> Regression  - Tree Based Models </h3>
+
+Regression tree based models chosen to predict the destination of our taxi trips. The choice for using regression trees are:
+
+- Regression tree based models are able to predict multinomial outcome variables, which is ideal in our case as our outcome variables consist of two outputs (latitude and longitude)
+- Decision boundaries of regression trees are rectilinear which is suitable for geospatial data as it is analogous drawing rectangles on a map to bound coordinates and using the centroid value as our predicted destination coordinates.
+
+Therefore, both Decision Tree Regressor and Random Forest Regressor from sklearn packages will be used.
+
+To adopt regression models the following steps are carried out:
+	1. Conduct GridSearchCV for best minimum samples to split 
+	2. Use Decision Tree Regressor with best parameter found to train validate
+	3. Use Random Forest Regressor with best parameter found above  to train validate
+
+DecisionTreeRegressor hyperparameter, minimum samples requried a split is chosen to grid search upon to determine how many coordinates should fall in a rectilinear boundary. Values 80, 100, 150, 250, 500 are chosen as split criteria. 
+
+After gridsearch, best min samples split value is 100. Performance of the decision tree model is evaluated using the validation which resulted in an evaluation score of 2.26km.
+
+
+As DecisionTreeRegressor decides splits based on a greedy algorithm, their accuracy performance might suffer as they tend to overfit the training set. In order to overcome this, we will use a RandomForestRegressor to help generalise the model through bagging techniques.
+
+With the same DecisionTreeRegressor parameters, a RandomForestRegressor with 200 trees is used. Performance of the decision tree model is evaluated using the validation which resulted in an evaluation score of 2.03km. As expected, RandomForestRegressor improved our results by reducing the error in distance predicted over 200m.
+
+
+A comparasion of both models:
+
+<img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/>
+<img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
+
+Feature importance: 
+
+It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
+
+
+- <h3> Classification – Neural Network </h3>
+
+Besides using Tree Based Models, we shall use an Artificial Neural Network (ANN) to explore if we can increase the accuracy of destination predictions. ANN is used as it takes all inputs into consideration - Each individual input connects to a neuron and when receiving input, change its internal state (i.e. the activation) according to that input and an activation function, and produce output depending on the input and the activation.
+
+[Illustration](https://en.wikipedia.org/wiki/Artificial_neural_network#/media/File:Colored_neural_network.svg) as follows:
+[ANN]()
+
+As a regression approach is used in for our Tree Based Model, a classification approach will be used in the ANN model. 
+
+To adopt an ANN the following steps are carried out:
+ 
+	1. Form clusters of our destinations in our train set by rounding them to the fourth decimal place and geohashing them
+	2. Split our train and val in to X (Predictor variables) and y (outcome variables) respectively
+	3. Design and built our ANN model with Harversine distance as our custom loss function
+	4. Fit X_train, y_train, X_val, y_val into our ANN to train it
+	5. Plot Training and Validation Loss per epoch to determine how good our ANN is performing
+	6. Chose the best model and use it to predict on our test set
+
+
+To cluster our end destinations, a two step approach is taken:
+
+	1. Extracting destinations coordinates in a pair. As latitudes and longitudes up to [4 decimals place have a precision of 11.132m](https://en.wikipedia.org/wiki/Decimal_degrees), points along the same street with be effectively grouped together.
+	2. After rounding, in order to further cluster coordinates into larger groups, coordinates are geohashed. 
+	    - Geohash encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, using hilbert space filling curves. [More information on Geohash](http://www.bigfastblog.com/geohash-intro)  
+	    - [Geohash package used](https://pypi.python.org/pypi/geohash-hilbert)  
+	    - Geohash precision of 17, using with base 4 (2bit) is chosen as it groups coordinates within (0.152703km x 0.152703km = 0.02km sq) together  
+	    - After encoding, geohashes are decoded to get the centroid coordinates representing each cluster  
+
+
+<img src="../assets/images/ANN.png" alt="ANN" style="width: 1500px;"/>
+
+The architecture is fairly simple, a vanilla neural network. Keras with Tensorflow backend is used. Categorical features are inputted into an embedding layer (this is analogous to one hot encoding in other ML models). Continuous features are inutted into a dense layer (fully connected layer). One hidden layer with 500 neurons is used with Relu as the activation function. The output of the first layer is passed into a subsequent layer with a softmax activation to aggregate the probability of clusters, the highest probability will be chosen as the prediction in the output layer. The loss function used would be a custom loss function - the haversine distance. The ANN model will be striving to reduce the distance between the predicted and actual values of the validation set. In addition, the keras package do not take in pandas dataframes, therefore pre-processing of all inputs to numpy arrays (matrices and vectors) has to carried out.
+
+After the building the framework of the model, the model is then trained on 50 epoch.
+ 
+<img src="../assets/images/NN_loss.png" alt="NN_loss" style="width: 1500px;"/>
+
+
+From the plot above, the training loss keeps decreasing, whereas the valiadation loss is rather consistent with minimal fluctuations. After epoch 20, the validation loss seems to have increased slightly, whereas the training continues to decrease. This shows that the model might be overfitting towards the training set. 
+
+
+<h2> Prediciting the test set </h2>
+
+All three validated models created are then used to predict the test set with the predictions submitted and scored on Kaggle. 
+
+The results are:
 
 
 
+##- Random Forest Regressor  
+	##- Public score : 2.93471 Rank #100/381  
+	##- Private score : 2.84788 #244/381  
+	
+- Artificial Neural Net
+	- Public Score: 3.02832 #115/381  
+	- Private Score: 3.13960 #259/381  
+
+- Decision Tree Regressor  
+	- Public score : 3.14168 #138/381  
+	- Private score : 3.14442 #270/381  
+
+The Random Forest Regressor performed the best out of the three models. 
+
+<h2> Conclusion </h2>
+
+Prediction of destinations is possible with:   
+- Date & Time  
+- Location data in the form of coordinates via GPS trackers  
+- Behavioral data of the target group  
 
 
+By adopting a classification model, due to the nature that the coordinates are extremely granular and there are places which the majority of the the public do not usually go, i.e farms in the outskirts of the city vs the city centre. The amount of points to form a cluster is extremely important to avoid a multivariate imbalance issue. However, it is extremely hard to determine the right amount of points required without domain expertise. Therefore, I strongly suggest using a regression model is more suited to predict destinations of trips. 
 
 
+Further work:
+- Use a regression ANN model to predict destinations  
+- Use of deep learning models such as Sequence to Sequence Recursive Neural Nets to be able to the path taken up to the destination  
+- Explore other predictive models such as Hidden Markov Model or Karman filters to see if they are suitable to predict destinations  
+- Include more features, such as holiday and weather information to help improve the predictions  
+
+    
 
 
 

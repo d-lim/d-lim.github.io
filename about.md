@@ -24,7 +24,7 @@ When i’m not dabbling with data, I like to:
 	<li>Google Cloud Platform</li>
 	<li>AWS</li>
 	<li>SGS HACCP Internal Auditor</li>
-	<li>Business Continuity Certified Foundation(BCCF)</li>
+	<li>Business Continuity Certified Foundation (BCCF)</li>
 </ul>
 
 <h2>Projects</h2>
