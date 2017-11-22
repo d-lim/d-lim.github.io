@@ -1,5 +1,5 @@
 ---
-title: ":Project: Human Mobility Prediction"
+title: ":Human Mobility Prediction"
 layout: post
 date: 2017-11-17 09:00
 tag: jekyll
@@ -13,15 +13,22 @@ author: derrick
 externalLink: false
 ---
 
-Test
+Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. It is inherent that most people do not constantly update others where they are heading towards, especially for businesses, they usually are not aware of which customers will be patronizing them for the day. While business do not have explicit information on their customers destinations, they have 
 
-test
-
-test
-
-Full implementation details at my [Github](http://sergiokopplin.github.io/indigo/)
+For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects)
 
 ---
+
+Data Origin:
+I am fortunate to be able to gather a year’s worth of taxi trips from the city of Porto from a competition hosted on [Kaggle](https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data). The objective of the competition is to predict the destination of a taxi ride while the taxi is on the move. Therefore, I have decided to use this to test out my hypothesis on predicting human mobility. 
+
+The metadata are as summarize in Table 1 below. 
+
+![Metadata](assets/images/Metadata.png)
+
+
+
+
 
 Approach Taken:
 
