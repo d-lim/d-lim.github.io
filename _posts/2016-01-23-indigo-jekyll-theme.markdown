@@ -125,7 +125,7 @@ From [research](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.391.831
 
 <h2> Predictive Models </h2>
 
-- <h3> Regression  - Tree Based Models </h3>
+###Regression  - Tree Based Models
 
 Regression tree based models chosen to predict the destination of our taxi trips. The choice for using regression trees are:
 
@@ -154,17 +154,19 @@ A comparasion of both models:
 <img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/>
 <img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
 
-<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 1500px;"/>
+<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 1000px;"/>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
 
 
-- <h3> Classification – Neural Network </h3>
+###Classification – Neural Network
 
-Besides using Tree Based Models, we shall use an Artificial Neural Network (ANN) to explore if we can increase the accuracy of destination predictions. ANN is used as it takes all inputs into consideration - Each individual input connects to a neuron and when receiving input, change its internal state (i.e. the activation) according to that input and an activation function, and produce output depending on the input and the activation.
+Besides using Tree Based Models, we shall use an [Artificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) (ANN) to explore if we can increase the accuracy of destination predictions. 
 
-[Illustration](https://en.wikipedia.org/wiki/Artificial_neural_network#/media/File:Colored_neural_network.svg) as follows:
-[ANN]()
+<img src="../assets/images/NN.png" alt="NN" style="width: 1000px;"/>
+
+ANN is used as it takes all inputs into consideration - Each individual input connects to a neuron and when receiving input, change its internal state (i.e. the activation) according to that input and an activation function, and produce output depending on the input and the activation.
+
 
 As a regression approach is used in for our Tree Based Model, a classification approach will be used in the ANN model. 
 
@@ -181,9 +183,8 @@ To adopt an ANN the following steps are carried out:
 To cluster our end destinations, a two step approach is taken:
 
 1. Extracting destinations coordinates in a pair. As latitudes and longitudes up to [4 decimals place have a precision of 11.132m](https://en.wikipedia.org/wiki/Decimal_degrees), points along the same street with be effectively grouped together.
-2. After rounding, in order to further cluster coordinates into larger groups, coordinates are geohashed. 
-    - Geohash encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, using hilbert space filling curves. [More information on Geohash](http://www.bigfastblog.com/geohash-intro)  
-    - [Geohash package used](https://pypi.python.org/pypi/geohash-hilbert)  
+2. After rounding, in order to further cluster coordinates into larger groups, coordinates are [geohashed](http://www.bigfastblog.com/geohash-intro). 
+    - Geohash encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, using hilbert space filling curves. [Geohash package used](https://pypi.python.org/pypi/geohash-hilbert)  
     - Geohash precision of 17, using with base 4 (2bit) is chosen as it groups coordinates within (0.152703km x 0.152703km = 0.02km sq) together  
     - After encoding, geohashes are decoded to get the centroid coordinates representing each cluster  
 
@@ -208,9 +209,9 @@ The results are:
 
 
 
-##- Random Forest Regressor  
-	##- Public score : 2.93471 Rank #100/381  
-	##- Private score : 2.84788 #244/381  
+<h5>- Random Forest Regressor  
+	###- Public score : 2.93471 Rank #100/381  
+	###- Private score : 2.84788 #244/381 </h5>  
 	
 - Artificial Neural Net
 	- Public Score: 3.02832 #115/381  
