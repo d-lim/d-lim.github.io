@@ -2,7 +2,7 @@
 title: "Human Mobility Prediction"
 layout: post
 date: 2017-11-17 09:00
-tag:
+tag: Human Mobility Prediction
 image: 
 headerImage: false
 projects: true
@@ -100,10 +100,19 @@ At this point, the training dataset is fairly clean. Now, more insights from the
 
 Most taxi rides appear to happen between the day, between 31 - 84 quarter hours, which is ~0800 - 2100 hours. The quarter hour at which most trips are conducted is 35, between 0845 to 0900 might be due to people being late and getting a taxi to rush to work/school. Least trips are conducted at quarter hour 10, between 0230 to 0245.
 
-<img src="../assets/images/Dis_Dur_Clean.png" alt="Dis_Dur_Clean" style="width: 1500px;"/> 
+<img src="../assets/images/trips_day.png" alt="trips_day" style="width: 1500px;"/> 
 
 Most taxi trips are on Fridays. It appears that most likely people are out for entertainment to kickstart the weekend and use taxis to commute. 
 
+<img src="../assets/images/trips_weeks.png" alt="trips_weeks" style="width: 1500px;"/> 
+
+There appears to be a dip in taxi service in August 2013, lowest being in week 34, which is the [summer school holidays](https://www.schoolholidayseurope.eu/portugal.html) in Porto. It appears that it could be either taxi drivers or customers going on holidays. The peak of taxi trips is in last week of April 2014, which is Spring in Porto.
+
+<img src="../assets/images/trips_ABC.png" alt="trips_ABC" style="width: 1500px;"/> 
+
+49% of the trips are from taxi stands. 
+
+___
 
 
 
