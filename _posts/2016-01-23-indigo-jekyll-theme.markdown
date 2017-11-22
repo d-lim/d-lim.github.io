@@ -24,6 +24,9 @@ I am fortunate to be able to gather a year’s worth of taxi trips from the city
 
 The metadata are as summarize in Table 1 below. 
 
+<img src="../assets/images/Metadata.png" alt="Drawing" style="width: 1500px;"/>
+<img src="./assets/images/Metadata.png" alt="Drawing" style="width: 1500px;"/>
+
 ![Metadata](../assets/images/Metadata.png)
 ![Metadata](./assets/images/Metadata.png)
 
