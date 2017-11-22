@@ -24,8 +24,8 @@ I am fortunate to be able to gather a year’s worth of taxi trips from the city
 
 The metadata are as summarize in Table 1 below. 
 
-<img src="../assets/images/Metadata.png" alt="Drawing" style="width: 1500px;"/>
-metadata
+<img src="../assets/images/Metadata.png" alt="Table 1" style="width: 1500px;"/>
+
 
 The evaluation method is the Mean Haversine Distance. The Haversine Distance is commonly used in navigation. It measures distances between two points on a sphere based on their latitude and longitude.
 
