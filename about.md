@@ -8,10 +8,10 @@ layout: page
 
 When i’m not dabbling with data, I like to:
 
-<li>Read to keep up with current events<li>
-<li>Run to unwind tangled thoughts<li>
-<li>Explore the world to learn about different cultures<li>
-<li>Connect with people over a good cup of coffee <li>
+<li>Read to keep up with current events</li>
+<li>Run to unwind tangled thoughts</li>
+<li>Explore the world to learn about different cultures</li>
+<li>Connect with people over a good cup of coffee </li>
 
 <h2>Skills</h2>
 

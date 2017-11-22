@@ -19,7 +19,8 @@ For the complete set of Jupyter notebooks with Python code and detailed Markdown
 
 ---
 
-Data Origin:
+<h2>Data Origin</h2>
+
 I am fortunate to be able to gather a year’s worth of taxi trips from the city of Porto from a competition hosted on [Kaggle](https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data). The objective of the competition is to predict the destination of a taxi ride while the taxi is on the move. Therefore, I have decided to use this to test out my hypothesis on predicting human mobility. 
 
 The metadata is as summarize below: 
@@ -39,7 +40,7 @@ d is the distance between two points, and r is the Earth’s radius (6371km).
 
 ---
 
-Approach Taken:
+<h2>Approach Taken</h2>
 
 - Extract, transform & load (ETL) data onto a VM Instance on Google Cloud
 - Perform wrangling and exploratory data analysis (EDA)
@@ -52,7 +53,7 @@ Approach Taken:
 
 ---
 
-ETL:
+<h2>ETL</h2>
 
 As the dataset consists of over 1.7 million trips, functions are written to efficiently extract, transform and load based on a toy dataset consisting of 50,000 random trips. An interesting point is that “POLYLINE” which contains all the datatype of the GPS coordinates is a string instead of a list, and coordinates (such as start and end coordinates) which is required could not be extracted. Therefore, the “POLYLINE” feature is transformed using the functions written below and the start and end coordinates are extracted.
 
@@ -62,7 +63,7 @@ In addition to transforming the “POLYLINE” feature, duplicates and missing d
 
 ----
 
-EDA: 
+<h2>EDA</h2> 
 
 With the full dataset that has been initially cleaned, exploratory work can be carried out. 
 
@@ -96,7 +97,7 @@ Looking at the both figures above, using 1.5xIQR for trips' distance and duratio
 
 At this point, the training dataset is fairly clean. Now, more insights from the taxi trips can be extracted. Using the date and time data extracted, the distribution of the trips can be observed. 
 
-<img src="../assets/images/trips_day.png" alt="trips_day" style="width: 1500px;"/> 
+<img src="../assets/images/trips_hours.png" alt="trips_hours" style="width: 1500px;"/> 
 
 Most taxi rides appear to happen between the day, between 31 - 84 quarter hours, which is ~0800 - 2100 hours. The quarter hour at which most trips are conducted is 35, between 0845 to 0900 might be due to people being late and getting a taxi to rush to work/school. Least trips are conducted at quarter hour 10, between 0230 to 0245.
 
