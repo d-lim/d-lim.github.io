@@ -1,5 +1,5 @@
 ---
-title: "<h1>Human Mobility Prediction</h1>"
+title: "Human Mobility Prediction"
 layout: post
 date: 2017-11-17 09:00
 tag: 
@@ -94,7 +94,7 @@ In order to removed the noise identified, the same statistical approach using in
 
 <img src="../assets/images/Dis_Dur_Clean.png" alt="Dis_Dur_Clean" style="width: 1500px;"/> 
 
-Looking at the both figures above, using 1.5xIQR for trips' distance and duration will introduce a large amount of bais as the distance of the taxi trips will be range between to 300m - 15km and durations between ~2mins to ~40mins. Whereas by using 3*IQR, the distance of the taxi trips will be range between 0.08 - 60.8km and durations between ~45s to ~2h. Taking into considering the area of end points is ~383km sq, 3xIQR would be a better choice to remove outliers.
+Looking at the both figures above, using 1.5xIQR for trips' distance and duration will introduce a large amount of bais as the distance of the taxi trips will be range between to 300m - 15km and durations between ~2mins to ~40mins. Whereas by using 3xIQR, the distance of the taxi trips will be range between 0.08 - 60.8km and durations between ~45s to ~2h. Taking into considering the area of end points is ~383km sq, 3xIQR would be a better choice to remove outliers.
 
 At this point, the training dataset is fairly clean. Now, more insights from the taxi trips can be extracted. Using the date and time data extracted, the distribution of the trips can be observed. 
 
