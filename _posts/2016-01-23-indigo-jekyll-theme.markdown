@@ -154,7 +154,7 @@ The distribution of evaluation scores for both models:
 <img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/><img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
 
 <div>
-	<center></center><img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><</center><figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
+	<center></center><img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/></center><figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
 </div>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
@@ -165,7 +165,7 @@ It is logical that the last subsequent coordinates before a trip ends is most pr
 
 Besides using Tree Based Models, we shall use an [Artificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) (ANN) to explore if we can increase the accuracy of destination predictions. 
 
-<img src="../assets/images/NN.png" alt="NN" style="width: 1000px;"/>
+<img src="../assets/images/NN.png" alt="NN" style="width: 300px;"/>
 
 ANN is used as it takes all inputs into consideration - Each individual input connects to a neuron and when receiving input, change its internal state (i.e. the activation) according to that input and an activation function, and produce output depending on the input and the activation.
 
