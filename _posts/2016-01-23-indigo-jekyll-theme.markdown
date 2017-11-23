@@ -266,4 +266,4 @@ Moving forward, the following approaches can be explored to improve the accuracy
 ---
  
 Check out my full implementation of the project [here](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions).
-If you have and feedback or queries, I would love to hear them by leaving a comment below or via [email](mailto:d_lim@outlook.sg).
+If you have and feedback or queries, I would love to hear them!:) Please leave a comment below or send me an [email](mailto:d_lim@outlook.sg).
