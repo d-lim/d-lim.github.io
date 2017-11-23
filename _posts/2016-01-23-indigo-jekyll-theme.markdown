@@ -13,7 +13,26 @@ author: derrick
 externalLink: false
 ---
 
-Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. It is inherent that most people do not constantly update others where they are heading towards, especially for businesses, they usually are not aware of which customers will be patronizing them for the day. While business do not have explicit information on their customers destinations, they have 
+
+Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. This is because people do not constantly update others on where they are heading towards. It is even more so for businesses, as customers rarely keep them informed of their visit. If only business know when their customers are arriving or where their customers going, operations can be better optimized, more values can be created for customers and revenues can be improved. Some examples: 
+
+- If rental companies know where customers are going to be nearing the end of their rental period, the next potential customer within the vicinity can be offered to take over the vehicle  
+- If taxi dispatchers know the destinations of rides, customer bookings can be assigned to the driver ending the trip within the vicinity  
+- If retail stores know that a customer is going to be within the vicinity, tailored promotions can be offered to attract them to the store  
+- If hospitality businesses know that a customer is going to visit them, they can prepare surprises to uplift customer experience  
+
+While explicit information on customers destinations are not available, I am curious to find out if implicit information can be gathered and used to predict customer movement. Nowadays, as almost everyone carries a smartphone by their side most of the time, my hypothesis is:
+
+“Can destinations of a moving objects be predicted with 3km accuracy if the following data is available”
+- Date & Time  
+- Location data in the form of coordinates via GPS trackers  
+
+
+<img src="../assets/images/sg3km.png" alt="sg3km" style="width: 1500px;"/> 
+
+A 3km accuracy is equivalent to predicting a if one is going to be in Orchard, between the Cathy Cineplex to Hotel Jen Tanglin, which is one of busiest retail area in Singapore.
+ 
+Therefore, for this project, I will explore if my hypothesis is plausible.
 
 For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions)
 
@@ -233,20 +252,18 @@ The Random Forest Regressor performed the best out of the three models.
 
 <h3> Conclusion </h3>
 
-Prediction of destinations is possible with:   
+Prediction of destinations up to 3km accuracy is possible with:   
 - Date & Time  
-- Location data in the form of coordinates via GPS trackers  
-- Behavioral data of the target group  
+- Location data in the form of coordinates   
+ 
+However, by adopting a classification model, due to the nature that the coordinates are extremely granular and there are places which the majority of the the public do not usually go, i.e farms in the outskirts of the city vs the city centre. The amount of points to form a cluster is extremely important to avoid a multivariate imbalance issue. However, it is extremely hard to determine the right amount of points required without domain expertise. Therefore, I strongly suggest using a regression model is more suited to predict destinations of trips. 
 
 
-By adopting a classification model, due to the nature that the coordinates are extremely granular and there are places which the majority of the the public do not usually go, i.e farms in the outskirts of the city vs the city centre. The amount of points to form a cluster is extremely important to avoid a multivariate imbalance issue. However, it is extremely hard to determine the right amount of points required without domain expertise. Therefore, I strongly suggest using a regression model is more suited to predict destinations of trips. 
-
-
-Further work:
+Moving forward, the following approaches can be explored to improve the accuracy of our predictions: 
 - Use a regression ANN model to predict destinations  
+- Include more features, such as holiday, weather, driver and passenger information
 - Use of deep learning models such as Sequence to Sequence Recursive Neural Nets to be able to the path taken up to the destination  
 - Explore other predictive models such as Hidden Markov Model or Karman filters to see if they are suitable to predict destinations  
-- Include more features, such as holiday and weather information to help improve the predictions  
 
 ---
  
