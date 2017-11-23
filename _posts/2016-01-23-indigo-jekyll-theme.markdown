@@ -149,12 +149,12 @@ As DecisionTreeRegressor decides splits based on a greedy algorithm, their accur
 
 With the same DecisionTreeRegressor parameters, a RandomForestRegressor with 200 trees is used. Performance of the decision tree model is evaluated using the validation which resulted in an evaluation score of 2.03km. As expected, RandomForestRegressor improved our results by reducing the error in distance predicted over 200m.
 
-A comparasion of both models:
+The distribution of evaluation scores for both models:
 
 <img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/><img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
 
 <div>
-<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
+	<center></center><img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><</center><figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
 </div>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
