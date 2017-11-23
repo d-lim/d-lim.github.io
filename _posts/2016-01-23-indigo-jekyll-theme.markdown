@@ -1,5 +1,5 @@
 ---
-title: <h1>"Human Mobility Prediction"</h1>
+title: "<h1>Human Mobility Prediction</h1>"
 layout: post
 date: 2017-11-17 09:00
 tag: 
@@ -33,7 +33,7 @@ The evaluation method is the Mean Haversine Distance. The Haversine Distance is 
 
 The Harversine Distance between the two locations can be computed as follows:
 
-<img src="../assets/images/json_loads.png" alt="Harversine" style="width: 1500px;"/>
+<img src="../assets/images/Haversine.png" alt="Harversine" style="width: 1500px;"/>
 
 where ϕ is the latitude, λ is the longitude, 
 
