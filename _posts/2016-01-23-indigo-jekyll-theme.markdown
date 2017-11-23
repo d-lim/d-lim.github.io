@@ -24,9 +24,9 @@ Even in this age where communication technology is instantaneous, many of us sti
 
 While explicit information on customers destinations are not available, I am curious to find out if implicit information can be gathered and used to predict customer movement. Nowadays, as almost everyone carries a smartphone by their side most of the time, my hypothesis is:
 
-“Can destinations of a moving objects be predicted with 3km accuracy if the following data is available”
-- Date & Time  
-- Location data in the form of coordinates via GPS trackers  
+**Destinations of a moving objects be predicted with 3km accuracy if the following data is available:**
+* Date & Time  
+* Location data in the form of coordinates via GPS trackers  
 
 
 <img src="../assets/images/sg3km.png" alt="sg3km" style="width: 1500px;"/> 
