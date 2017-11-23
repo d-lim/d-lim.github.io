@@ -13,8 +13,6 @@ author: derrick
 externalLink: false
 ---
 
-<h2> Motivtion </h2>
-
 Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. It is inherent that most people do not constantly update others where they are heading towards, especially for businesses, they usually are not aware of which customers will be patronizing them for the day. While business do not have explicit information on their customers destinations, they have 
 
 For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions)
@@ -77,7 +75,7 @@ As the predictions is on taxi destinations, all the end points are plotted out t
 From the plots of the destination coordinates it is observed there are a couple of trips which ended very far away from the majority, are concentrated into a small blob, seen in the figure above. It is important that our training data destinations do not contain end points which are very far away from majority of the end points as this will reduce the accuracy of the model predictions. In order to determine which are the outliers, a statistical approach, using the interquartile ranges of both the latitudes and longitudes are taken.  
 
 
-<img src="../assets/images/1-5IQR_Ends.png" alt="3IQR_Ends" style="width: 500px;"/> <img src="../assets/images/3IQR_Ends.png" alt="1-5IQR_Ends" style="width: 500px;"/> 
+<img src="../assets/images/1-5IQR_Ends.png" alt="3IQR_Ends" style="width: 1500px;"/> <img src="../assets/images/3IQR_Ends.png" alt="1-5IQR_Ends" style="width: 1500px;"/> 
 
 
 Form the figures above, the points in green are the where most trips end. There is a high concentration of green points which seems to indicate that most trips end at the city centre. The plot with 1.5xIQR seems to a remove a fair bit of popular destinations after comparing the points at the left, top and bottom of both plots. Therefore, 3xIQR is chosen to remove outliers.
@@ -153,10 +151,10 @@ With the same DecisionTreeRegressor parameters, a RandomForestRegressor with 200
 
 A comparasion of both models:
 
-<img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 500px;"/><img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 500px;"/>
+<img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/><img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
 
 <div>
-<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><<figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
+<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
 </div>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
