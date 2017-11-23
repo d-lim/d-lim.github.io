@@ -19,7 +19,7 @@ For the complete set of Jupyter notebooks with Python code and detailed Markdown
 
 ---
 
-<h2>Data Origin</h2>
+<h3>Data Origin</h3>
 
 I am fortunate to be able to gather a year’s worth of taxi trips from the city of Porto from a competition hosted on [Kaggle](https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/data). The objective of the competition is to predict the destination of a taxi ride while the taxi is on the move. Therefore, I have decided to use this to test out my hypothesis on predicting human mobility. 
 
@@ -41,7 +41,7 @@ d is the distance between two points, and r is the Earth’s radius (6371km).
 
 ---
 
-<h2>Approach Taken</h2>
+<h3>Approach Taken</h3>
 
 - Extract, transform & load (ETL) data onto a VM Instance on Google Cloud
 - Perform wrangling and exploratory data analysis (EDA)
@@ -53,7 +53,7 @@ d is the distance between two points, and r is the Earth’s radius (6371km).
 
 ---
 
-<h2>ETL</h2>
+<h3>ETL</h3>
 
 As the dataset consists of over 1.7 million trips, functions are written to efficiently extract, transform and load based on a toy dataset consisting of 50,000 random trips. An interesting point is that “POLYLINE” which contains all the datatype of the GPS coordinates is a string instead of a list, and coordinates (such as start and end coordinates) which is required could not be extracted. Therefore, the “POLYLINE” feature is transformed using the functions written below and the start and end coordinates are extracted.
 
@@ -64,7 +64,7 @@ In addition to transforming the “POLYLINE” feature, duplicates and missing d
 
 ----
 
-<h2>EDA</h2> 
+<h3>EDA</h3> 
 
 With the full dataset that has been initially cleaned, exploratory work can be carried out. 
 
@@ -116,7 +116,7 @@ There appears to be a dip in taxi service in August 2013, lowest being in week 3
 
 ---
 
-<h2> Train/Validation datasets </h2>
+<h3> Train/Validation datasets </h3>
 
 A validation set is created to determine the performance of model before using it to predict on our test set. As the given test set contains 320 truncated trips, we will split our training data into train and validation sets. The ratio chosen is train(99.9% - 1,580,976 trips) and validation(0.1% - 1,581 trips). In addition, the polyline coordinates of the validation set have to be truncated.
 
@@ -124,9 +124,9 @@ From [research](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.391.831
 
 ---
 
-<h2> Predictive Models </h2>
+<h3> Predictive Models </h3>
 
-<h5>Regression  - Tree Based Models </h5>
+**Regression  - Tree Based Models**
 
 Regression tree based models chosen to predict the destination of our taxi trips. The choice for using regression trees are:
 
@@ -161,7 +161,7 @@ It is logical that the last subsequent coordinates before a trip ends is most pr
 
 ---
 
-<h5>Classification – Neural Network</h5>
+**Classification – Neural Network**
 
 Besides using Tree Based Models, we shall use an [Artificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) (ANN) to explore if we can increase the accuracy of destination predictions. 
 
@@ -204,7 +204,7 @@ From the plot above, the training loss keeps decreasing, whereas the valiadation
 
 ---
 
-<h2> Prediciting the test set </h2>
+<h3> Prediciting the test set </h3>
 
 All three validated models created are then used to predict the test set with the predictions submitted and scored on Kaggle. 
 
@@ -227,7 +227,7 @@ The Random Forest Regressor performed the best out of the three models.
 
 ---
 
-<h2> Conclusion </h2>
+<h3> Conclusion </h3>
 
 Prediction of destinations is possible with:   
 - Date & Time  
