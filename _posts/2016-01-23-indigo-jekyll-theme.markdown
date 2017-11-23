@@ -15,14 +15,14 @@ externalLink: false
 
 <img src="../assets/images/human_mobility.gif" alt="human_mobility" style="width: 1500px;"/> 
 
-Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. This is because people do not constantly update others on where they are heading towards. It is even more so for businesses, as customers rarely keep them informed of their visit. If only business know when their customers are arriving or where their customers going, operations can be better optimized, more values can be created for customers and revenues can be improved. Some examples: 
+Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. This is because people do not constantly update others on where they are heading towards. It is even more so for businesses, as customers rarely keep them informed of their visits. If only businesses know when their customers are arriving or where their customers going, operations can be better optimized, more values can be created for customers and revenues can be improved. Some examples: 
 
 - If rental companies know where customers are going to be nearing the end of their rental period, the next potential customer within the vicinity can be offered to take over the vehicle  
 - If taxi dispatchers know the destinations of rides, customer bookings can be assigned to the driver ending the trip within the vicinity  
 - If retail stores know that a customer is going to be within the vicinity, tailored promotions can be offered to attract them to the store  
 - If hospitality businesses know that a customer is going to visit them, they can prepare surprises to uplift customer experience  
 
-While explicit information on customers destinations are not available, I am curious to find out if implicit information can be gathered and used to predict customer movement. Nowadays, as almost everyone carries a smartphone by their side most of the time, my hypothesis is:
+While explicit information on customer destinations are not available, I am curious to find out if implicit information can be gathered and used to predict customer movement. Nowadays, as almost everyone carries a smartphone by their side most of the time, my hypothesis is:
 
 **_Destinations of a moving objects be predicted with 3km accuracy if the following data is available:_**  
 * Date & Time  
