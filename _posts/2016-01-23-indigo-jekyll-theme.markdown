@@ -34,7 +34,7 @@ A 3km accuracy is equivalent to predicting a if one is going to be in Orchard, b
  
 Therefore, for this project, I will explore if my hypothesis is plausible.
 
-For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions)
+For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions).
 
 ---
 
@@ -44,15 +44,13 @@ I am fortunate to be able to gather a year’s worth of taxi trips from the city
 
 The metadata is as summarize below: 
 
-
 <img src="../assets/images/Metadata.png" alt="Metadata" style="width: 1500px;"/> 
 
 The evaluation method is the Mean Haversine Distance. The Haversine Distance is commonly used in navigation. It measures distances between two points on a sphere based on their latitude and longitude.
 
 The Harversine Distance between the two locations can be computed as follows:
 
-
-<img src="../assets/images/Haversine.png" alt="Harversine" style="width: 1500px;"/>
+<img src="../assets/images/Harversine.png" alt="Harversine" style="width: 1500px;"/>
 
 where ϕ is the latitude, λ is the longitude, 
 
@@ -252,19 +250,18 @@ The Random Forest Regressor performed the best out of the three models.
 
 <h3> Conclusion </h3>
 
-Prediction of destinations up to 3km accuracy is possible with:   
-- Date & Time  
-- Location data in the form of coordinates   
+Prediction of destinations up to 3km accuracy is possible with:  
+* Date & Time  
+* Location data in the form of coordinates   
  
 However, by adopting a classification model, due to the nature that the coordinates are extremely granular and there are places which the majority of the the public do not usually go, i.e farms in the outskirts of the city vs the city centre. The amount of points to form a cluster is extremely important to avoid a multivariate imbalance issue. However, it is extremely hard to determine the right amount of points required without domain expertise. Therefore, I strongly suggest using a regression model is more suited to predict destinations of trips. 
 
 
 Moving forward, the following approaches can be explored to improve the accuracy of our predictions: 
-- Use a regression ANN model to predict destinations  
-- Include more features, such as holiday, weather, driver and passenger information
-- Use of deep learning models such as Sequence to Sequence Recursive Neural Nets to be able to the path taken up to the destination  
-- Explore other predictive models such as Hidden Markov Model or Karman filters to see if they are suitable to predict destinations  
-
+* Use a regression ANN model to predict destinations  
+* Include more features, such as holiday, weather, driver and passenger information
+* Use of deep learning models such as Sequence to Sequence Recursive Neural Nets and LSTMs, and other machine learning models, such as Hidden Markov Model and Karman filters to predict the path taken up to the destination  
+  
 ---
  
 Check out my full implementation of the project [here](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions).
