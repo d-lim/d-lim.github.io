@@ -1,8 +1,8 @@
 ---
-title: "Human Mobility Prediction"
+title: <h1>"Human Mobility Prediction"</h1>
 layout: post
 date: 2017-11-17 09:00
-tag: Human Mobility Prediction
+tag: 
 image: 
 headerImage: false
 projects: true
@@ -125,7 +125,7 @@ From [research](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.391.831
 
 <h2> Predictive Models </h2>
 
-###Regression  - Tree Based Models
+<h5>Regression  - Tree Based Models </h5>
 
 Regression tree based models chosen to predict the destination of our taxi trips. The choice for using regression trees are:
 
@@ -159,7 +159,7 @@ A comparasion of both models:
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
 
 
-###Classification – Neural Network
+<h5>Classification – Neural Network</h5>
 
 Besides using Tree Based Models, we shall use an [Artificial Neural Network](https://en.wikipedia.org/wiki/Artificial_neural_network) (ANN) to explore if we can increase the accuracy of destination predictions. 
 
@@ -208,8 +208,6 @@ All three validated models created are then used to predict the test set with th
 
 The results are:
 
-
-
 <h5>- Random Forest Regressor </h5> 
 <h5>	- Public score : 2.93471 Rank #100/381  </h5>
 <h5>	- Private score : 2.84788 #244/381  </h5>
@@ -244,10 +242,6 @@ Further work:
 - Include more features, such as holiday and weather information to help improve the predictions  
 
 ---
-
-    
-
-
-
+ 
 Check out my full implementation of the project [here].(https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions) 
 If you have and feedback or queries, I would love to hear them by leaving a comment below or via [email](d_lim@outlook.sg)
