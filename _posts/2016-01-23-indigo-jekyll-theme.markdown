@@ -3,7 +3,7 @@ title: "<h1>Human Mobility Prediction</h1>"
 layout: post
 date: 2017-11-17 09:00
 tag: 
-image: https://github.com/d-lim/d-lim.github.io/tree/master/assets/images/humanmobility.jpg
+image: <img src="../assets/images/humanmobility.jpg" style="width: 50px;"/> 
 headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
@@ -211,9 +211,9 @@ All three validated models created are then used to predict the test set with th
 The results are:
 
 
-- <h5>Random Forest Regressor </h5> 
-	- <h5>Public score : 2.93471 Rank #100/381</h5>  
-	- <h5>Private score : 2.84788 #244/381</h5> 
+- **Random Forest Regressor**   
+	- **Public score : 2.93471 Rank #100/381**   
+	- **Private score : 2.84788 #244/381**
 	
 - Artificial Neural Net
 	- Public Score: 3.02832 #115/381  
