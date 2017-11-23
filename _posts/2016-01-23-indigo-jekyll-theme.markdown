@@ -15,7 +15,7 @@ externalLink: false
 
 Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. It is inherent that most people do not constantly update others where they are heading towards, especially for businesses, they usually are not aware of which customers will be patronizing them for the day. While business do not have explicit information on their customers destinations, they have 
 
-For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects)
+For the complete set of Jupyter notebooks with Python code and detailed Markdowns of my process through this project, please refer to my [Github](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions)
 
 ---
 
@@ -200,6 +200,7 @@ After the building the framework of the model, the model is then trained on 50 e
 
 From the plot above, the training loss keeps decreasing, whereas the valiadation loss is rather consistent with minimal fluctuations. After epoch 20, the validation loss seems to have increased slightly, whereas the training continues to decrease. This shows that the model might be overfitting towards the training set. 
 
+---
 
 <h2> Prediciting the test set </h2>
 
@@ -209,9 +210,9 @@ The results are:
 
 
 
-<h5>- Random Forest Regressor  
-	###- Public score : 2.93471 Rank #100/381  
-	###- Private score : 2.84788 #244/381 </h5>  
+<h5>- Random Forest Regressor </h5> 
+<h5>	- Public score : 2.93471 Rank #100/381  </h5>
+<h5>	- Private score : 2.84788 #244/381  </h5>
 	
 - Artificial Neural Net
 	- Public Score: 3.02832 #115/381  
@@ -222,6 +223,8 @@ The results are:
 	- Private score : 3.14442 #270/381  
 
 The Random Forest Regressor performed the best out of the three models. 
+
+---
 
 <h2> Conclusion </h2>
 
@@ -240,9 +243,11 @@ Further work:
 - Explore other predictive models such as Hidden Markov Model or Karman filters to see if they are suitable to predict destinations  
 - Include more features, such as holiday and weather information to help improve the predictions  
 
+---
+
     
 
 
 
-[Check it out](http://sergiokopplin.github.io/indigo/) here.
-If you need some help, just [tell me](http://github.com/sergiokopplin/indigo/issues).
+Check out my full implementation of the project [here].(https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions) 
+If you have and feedback or queries, I would love to hear them by leaving a comment below or via [email](d_lim@outlook.sg)
