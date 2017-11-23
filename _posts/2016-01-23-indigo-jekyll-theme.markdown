@@ -3,7 +3,7 @@ title: "<h1>Human Mobility Prediction</h1>"
 layout: post
 date: 2017-11-17 09:00
 tag: 
-image: 
+image: https://github.com/d-lim/d-lim.github.io/tree/master/assets/images/humanmobility.jpg
 headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
@@ -12,6 +12,8 @@ category: project
 author: derrick
 externalLink: false
 ---
+
+<h2> Motivtion </h2>
 
 Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. It is inherent that most people do not constantly update others where they are heading towards, especially for businesses, they usually are not aware of which customers will be patronizing them for the day. While business do not have explicit information on their customers destinations, they have 
 
@@ -25,13 +27,13 @@ I am fortunate to be able to gather a year’s worth of taxi trips from the city
 
 The metadata is as summarize below: 
 
-<div>
-	<img src="../assets/images/Metadata.png" alt="Metadata" style="width: 1500px;"/> <figcaption class="caption">Photo by John Doe</figcaption>
-</div>
+
+<img src="../assets/images/Metadata.png" alt="Metadata" style="width: 1500px;"/> 
 
 The evaluation method is the Mean Haversine Distance. The Haversine Distance is commonly used in navigation. It measures distances between two points on a sphere based on their latitude and longitude.
 
 The Harversine Distance between the two locations can be computed as follows:
+
 
 <img src="../assets/images/Haversine.png" alt="Harversine" style="width: 1500px;"/>
 
@@ -51,12 +53,12 @@ d is the distance between two points, and r is the Earth’s radius (6371km).
 	- Classification – Neural Network 
 - Validate models using the mean haversine distance and thereafter predict on test data set
 
-
 ---
 
 <h2>ETL</h2>
 
 As the dataset consists of over 1.7 million trips, functions are written to efficiently extract, transform and load based on a toy dataset consisting of 50,000 random trips. An interesting point is that “POLYLINE” which contains all the datatype of the GPS coordinates is a string instead of a list, and coordinates (such as start and end coordinates) which is required could not be extracted. Therefore, the “POLYLINE” feature is transformed using the functions written below and the start and end coordinates are extracted.
+
 
 <img src="../assets/images/json_loads.png" alt="transform_coordinates" style="width: 1500px;"/>
 
@@ -75,7 +77,7 @@ As the predictions is on taxi destinations, all the end points are plotted out t
 From the plots of the destination coordinates it is observed there are a couple of trips which ended very far away from the majority, are concentrated into a small blob, seen in the figure above. It is important that our training data destinations do not contain end points which are very far away from majority of the end points as this will reduce the accuracy of the model predictions. In order to determine which are the outliers, a statistical approach, using the interquartile ranges of both the latitudes and longitudes are taken.  
 
 
-<img src="../assets/images/1-5IQR_Ends.png" alt="3IQR_Ends" style="width: 1500px;"/> <img src="../assets/images/3IQR_Ends.png" alt="1-5IQR_Ends" style="width: 1500px;"/> 
+<img src="../assets/images/1-5IQR_Ends.png" alt="3IQR_Ends" style="width: 500px;"/> <img src="../assets/images/3IQR_Ends.png" alt="1-5IQR_Ends" style="width: 500px;"/> 
 
 
 Form the figures above, the points in green are the where most trips end. There is a high concentration of green points which seems to indicate that most trips end at the city centre. The plot with 1.5xIQR seems to a remove a fair bit of popular destinations after comparing the points at the left, top and bottom of both plots. Therefore, 3xIQR is chosen to remove outliers.
@@ -114,7 +116,7 @@ There appears to be a dip in taxi service in August 2013, lowest being in week 3
 
 49% of the trips are from taxi stands. 
 
-___
+---
 
 <h2> Train/Validation datasets </h2>
 
@@ -149,16 +151,17 @@ As DecisionTreeRegressor decides splits based on a greedy algorithm, their accur
 
 With the same DecisionTreeRegressor parameters, a RandomForestRegressor with 200 trees is used. Performance of the decision tree model is evaluated using the validation which resulted in an evaluation score of 2.03km. As expected, RandomForestRegressor improved our results by reducing the error in distance predicted over 200m.
 
-
 A comparasion of both models:
 
-<img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 1500px;"/>
-<img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 1500px;"/>
+<img src="../assets/images/DecisionTree.png" alt="DecisionTree" style="width: 500px;"/><img src="../assets/images/RandomForest.png" alt="RandomForest" style="width: 500px;"/>
 
-<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 1000px;"/>
+<div>
+<img src="../assets/images/Feature_Importance.png" alt="Feature_Importance" style="width: 200px;"/><<figcaption class="caption">Random Forrest Top 10 Feature Importance</figcaption>
+</div>
 
 It is logical that the last subsequent coordinates before a trip ends is most predictive of a taxi ride's destination and our model has also affirmed this as the 2nd and 3rd last coordinates are at the top for feature importance.
 
+---
 
 <h5>Classification – Neural Network</h5>
 
@@ -210,9 +213,9 @@ All three validated models created are then used to predict the test set with th
 The results are:
 
 
-<h5>- Random Forest Regressor </h5> 
-<h5>	- Public score : 2.93471 Rank #100/381  </h5>
-<h5>	- Private score : 2.84788 #244/381  </h5>
+- <h5>Random Forest Regressor </h5> 
+	- <h5>Public score : 2.93471 Rank #100/381</h5>  
+	- <h5>Private score : 2.84788 #244/381</h5> 
 	
 - Artificial Neural Net
 	- Public Score: 3.02832 #115/381  
