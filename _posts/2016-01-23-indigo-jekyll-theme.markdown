@@ -25,8 +25,9 @@ I am fortunate to be able to gather a year’s worth of taxi trips from the city
 
 The metadata is as summarize below: 
 
-<img src="../assets/images/Metadata.png" alt="Metadata" style="width: 1500px;"/> <figcaption class="caption">Photo by John Doe</figcaption>
-
+<div>
+	<img src="../assets/images/Metadata.png" alt="Metadata" style="width: 1500px;"/> <figcaption class="caption">Photo by John Doe</figcaption>
+</div>
 
 The evaluation method is the Mean Haversine Distance. The Haversine Distance is commonly used in navigation. It measures distances between two points on a sphere based on their latitude and longitude.
 
@@ -208,6 +209,7 @@ All three validated models created are then used to predict the test set with th
 
 The results are:
 
+
 <h5>- Random Forest Regressor </h5> 
 <h5>	- Public score : 2.93471 Rank #100/381  </h5>
 <h5>	- Private score : 2.84788 #244/381  </h5>
@@ -243,5 +245,5 @@ Further work:
 
 ---
  
-Check out my full implementation of the project [here].(https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions) 
-If you have and feedback or queries, I would love to hear them by leaving a comment below or via [email](d_lim@outlook.sg)
+Check out my full implementation of the project [here](https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions).
+If you have and feedback or queries, I would love to hear them by leaving a comment below or via [email](mailto:d_lim@outlook.sg).
