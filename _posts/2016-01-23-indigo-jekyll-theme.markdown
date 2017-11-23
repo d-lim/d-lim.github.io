@@ -13,6 +13,7 @@ author: derrick
 externalLink: false
 ---
 
+<img src="../assets/images/human_mobility.gif" alt="human_mobility" style="width: 1500px;"/> 
 
 Even in this age where communication technology is instantaneous, many of us still use or get the response: “If only I knew you are going to be here, I would have…”. This is because people do not constantly update others on where they are heading towards. It is even more so for businesses, as customers rarely keep them informed of their visit. If only business know when their customers are arriving or where their customers going, operations can be better optimized, more values can be created for customers and revenues can be improved. Some examples: 
 
