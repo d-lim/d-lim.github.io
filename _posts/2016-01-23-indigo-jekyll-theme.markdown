@@ -30,7 +30,7 @@ While explicit information on customers destinations are not available, I am cur
 
 <img src="../assets/images/sg3km.png" alt="sg3km" style="width: 1500px;"/> 
 
-A 3km accuracy is equivalent to predicting a if one is going to be in Orchard, between the Cathy Cineplex to Hotel Jen Tanglin, which is one of busiest retail area in Singapore.
+A 3km accuracy is equivalent to predicting a if one is going to be in Orchard, between the Cathy Cineplex to Hotel Jen Tanglin, which is along the busiest retail district in Singapore.
  
 Therefore, for this project, I will explore if my hypothesis is plausible.
 

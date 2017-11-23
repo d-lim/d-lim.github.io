@@ -30,7 +30,5 @@ When i’m not dabbling with data, I like to:
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+	<li><a href="https://github.com/d-lim/Projects/tree/master/Human%20Mobility%20Predictions">Human Mobility Prediction</a></li>
 </ul>
