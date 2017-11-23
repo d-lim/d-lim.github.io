@@ -3,7 +3,7 @@ title: "<h1>Human Mobility Prediction</h1>"
 layout: post
 date: 2017-11-17 09:00
 tag: 
-image: <img src="../assets/images/humanmobility.jpg" style="width: 50px;"/> 
+image: 
 headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
