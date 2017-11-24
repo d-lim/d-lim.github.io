@@ -24,14 +24,14 @@ Even in this age where communication technology is instantaneous, many of us sti
 
 While explicit information on customer destinations are not available, I am curious to find out if implicit information can be gathered and used to predict customer movement. Nowadays, as almost everyone carries a smartphone by their side most of the time, my hypothesis is:
 
-**_Destinations of a moving objects be predicted with 3km accuracy if the following data is available:_**  
+**_Destinations of moving objects can be predicted within 3km accuracy if the following data is available:_**  
 * Date & Time  
 * Location data in the form of coordinates via GPS trackers  
 
 
 <img src="../assets/images/sg3km.png" alt="sg3km" style="width: 1500px;"/> 
 
-A 3km accuracy is equivalent to predicting a if one is going to be in Orchard, between the Cathy Cineplex to Hotel Jen Tanglin, which is along the busiest retail district in Singapore.
+Within 3km accuracy is equivalent to predicting if one is going to be in Orchard, between the Cathy Cineplex to Hotel Jen Tanglin, which is along the busiest retail district in Singapore.
  
 Therefore, for this project, I will explore if my hypothesis is plausible.
 
@@ -261,7 +261,9 @@ However, by adopting a classification model, due to the nature that the coordina
 Moving forward, the following approaches can be explored to improve the accuracy of our predictions: 
 * Use a regression ANN model to predict destinations  
 * Include more features, such as holiday, weather, driver and passenger information
-* Use of deep learning models such as Sequence to Sequence Recursive Neural Nets and LSTMs, and other machine learning models, such as Hidden Markov Model and Karman filters to predict the path taken up to the destination  
+* Use of deep learning models such as Sequence to Sequence Recursive Neural Nets and LSTMs, and other machine learning models, such as Hidden Markov Model and Karman filters to predict the path taken up to the destination
+* Utilise Hadoop and Apache Spark architecture for scalability 
+
   
 ---
  
