@@ -118,7 +118,7 @@ At this point, the training dataset is fairly clean. Now, more insights from the
 
 <img src="../assets/images/trips_hours.png" alt="trips_hours" style="width: 1500px;"/> 
 
-Most taxi rides appear to happen between the day, between 31 - 84 quarter hours, which is ~0800 - 2100 hours. The quarter hour at which most trips are conducted is 35, between 0845 to 0900 might be due to people being late and getting a taxi to rush to work/school. Least trips are conducted at quarter hour 10, between 0230 to 0245.
+Most taxi rides appear to happen between the day, between 31 - 84 quarter hours, which is ~0800 - 2000 hours. The quarter hour at which most trips are conducted is 35, between 0845 to 0900 might be due to people being late and getting a taxi to rush to work/school. Least trips are conducted at quarter hour 10, between 0230 to 0245.
 
 <img src="../assets/images/trips_day.png" alt="trips_day" style="width: 1500px;"/> 
 
